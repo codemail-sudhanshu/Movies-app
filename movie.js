@@ -50,22 +50,25 @@ function empty() {
 }
 
 function showmovie(mov) {
-  const arr = Array.from(mov);
-  mc.innerHTML = "";
+  if (mov.length == 0) {
+    empty();
+  } else {
+    const arr = Array.from(mov);
+    mc.innerHTML = "";
 
-  arr.forEach((move) => {
-    const mbox = document.createElement("div");
+    arr.forEach((move) => {
+      const mbox = document.createElement("div");
 
-    const { poster_path, title, vote_average } = move;
-    var ip = IMGPATH + poster_path;
+      const { poster_path, title, vote_average } = move;
+      var ip = IMGPATH + poster_path;
 
-    mbox.classList.add("boxc");
-    console.log(poster_path);
-    if (poster_path === null) {
-      ip = "i.jpg";
-    }
+      mbox.classList.add("boxc");
+      console.log(poster_path);
+      if (poster_path === null) {
+        ip = "i.jpg";
+      }
 
-    mbox.innerHTML = ` <div class="box">
+      mbox.innerHTML = ` <div class="box">
                 <div class="image">
                     <img src="${ip}" class="img" alt="" />
                 </div>
@@ -84,8 +87,9 @@ function showmovie(mov) {
 
        `;
 
-    mc.appendChild(mbox);
-  });
+      mc.appendChild(mbox);
+    });
+  }
 }
 
 function getcolor(num) {
@@ -119,7 +123,6 @@ function SEARCH(event) {
     if (sugar.length == 0) {
       const c = document.getElementById("mc");
       empty();
-
       const sudiv = document.createElement("div");
       sudiv.classList.add("sg");
       sudiv.href = "#";

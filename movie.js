@@ -131,8 +131,13 @@ function SEARCH(event) {
     }
 
     if (event.key === "Enter") {
-      showmovie(sugar);
+      if (sugar.length == 0) {
+        empty();
+      } else {
+        showmovie(sugar);
+      }
       sugremove();
     }
   };
 }
+

@@ -1,0 +1,12 @@
+
+{
+"short_ name":   "WD1",
+ "name":   "Wiredelta PWA",
+
+
+ "start_ur1":     "/index.html",
+"background_color":       "#000000",
+"display":    "standalone"
+
+   }
+
